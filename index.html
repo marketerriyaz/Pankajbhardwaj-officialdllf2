@@ -2,169 +2,140 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Pankaj Bhardwaj Official</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:Inter,sans-serif;
-background:linear-gradient(135deg,#0f172a,#1e293b);
-min-height:100vh;
-padding:20px;
+background:#020b08;
 color:#fff;
+overflow-x:hidden;
 }
-.wrap{max-width:700px;margin:auto}
+.bg{
+position:fixed;inset:0;
+background:
+radial-gradient(circle at center, rgba(0,255,170,.15), transparent 40%),
+radial-gradient(circle at 20% 20%, rgba(0,255,170,.08), transparent 25%),
+#020b08;
+}
+.wrap{position:relative;z-index:2;max-width:720px;margin:auto;padding:40px 20px}
+.live,.joined{
+display:flex;gap:10px;justify-content:center;align-items:center;
+padding:12px 18px;border-radius:999px;
+background:rgba(8,30,22,.7);
+border:1px solid rgba(20,241,149,.25);
+box-shadow:0 0 30px rgba(20,241,149,.12);
+width:max-content;margin:0 auto 24px;
+}
+.dot{width:10px;height:10px;border-radius:50%;background:#14f195;box-shadow:0 0 15px #14f195}
+.logo-wrap{
+width:170px;height:170px;margin:0 auto 20px;
+border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+box-shadow:0 0 0 4px rgba(20,241,149,.3),0 0 40px rgba(20,241,149,.5);
+}
+.logo-wrap img{width:150px;height:150px;border-radius:50%;object-fit:cover}
+h1{text-align:center;font-size:54px}
+.sub{text-align:center;color:#ffcf4d;margin:12px 0}
+.stars{text-align:center;color:#ffcf4d}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}
 .card{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.15);
-border-radius:28px;
-padding:28px;
-box-shadow:0 20px 60px rgba(0,0,0,.35);
-text-align:center;
+background:rgba(8,30,22,.65);
+border:1px solid rgba(20,241,149,.18);
+border-radius:20px;padding:20px;text-align:center;
+box-shadow:0 0 25px rgba(20,241,149,.08);
 }
-.live{
-display:inline-block;
-padding:10px 16px;
-border-radius:999px;
-background:rgba(34,197,94,.15);
-border:1px solid rgba(34,197,94,.4);
-font-weight:700;
-margin-bottom:20px;
-}
-.logo{
-width:90px;height:90px;border-radius:50%;
-border:4px solid rgba(255,255,255,.25);
-object-fit:cover;
-}
+.card b{font-size:32px;color:#14f195}
 .hero{
-width:150px;height:150px;border-radius:50%;
-margin:20px auto;
-display:block;
-object-fit:cover;
-border:5px solid #fff;
-}
-h1{font-size:40px;font-weight:800;line-height:1.1;margin:15px 0}
-.rating{
-display:inline-block;
-background:#f59e0b;
-color:#111;
-padding:8px 14px;
-border-radius:999px;
-font-weight:800;
-margin-bottom:20px;
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
+font-size:42px;font-weight:800;text-align:center;line-height:1.25;
 margin:25px 0;
 }
-.stat{
-background:rgba(255,255,255,.08);
-padding:18px;
-border-radius:18px;
-}
-.stat b{display:block;font-size:24px}
+.green{color:#14f195;text-shadow:0 0 15px rgba(20,241,149,.8)}
+.desc{text-align:center;color:#9ab3a8;font-size:18px}
 .btn{
-display:block;
-text-decoration:none;
-background:#229ED9;
-color:#fff;
-padding:18px;
-border-radius:18px;
-font-weight:800;
-font-size:20px;
-margin:20px 0;
+display:block;text-align:center;text-decoration:none;color:#001d12;
+font-weight:800;font-size:30px;
+background:#14f195;
+padding:24px;border-radius:22px;
+margin:25px 0;
+box-shadow:0 0 50px rgba(20,241,149,.55);
 }
-.desc{
-font-size:17px;
-line-height:1.7;
-opacity:.95;
+.feature{
+background:rgba(8,30,22,.65);
+border:1px solid rgba(20,241,149,.15);
+border-radius:20px;padding:22px;margin:14px 0;
 }
-.features{
-margin-top:25px;
-text-align:left;
-background:rgba(255,255,255,.06);
-padding:20px;
-border-radius:18px;
-}
-.features p{margin:12px 0}
-.join{
-margin:20px 0;
-font-weight:800;
-color:#22c55e;
-}
-.disclaimer{
-margin-top:25px;
-font-size:13px;
-line-height:1.7;
-opacity:.8;
-background:rgba(255,255,255,.05);
-padding:15px;
-border-radius:15px;
-}
-@media(max-width:600px){
-h1{font-size:30px}
-.grid{grid-template-columns:1fr}
+.feature:before{content:"✔ ";color:#14f195}
+.limit{text-align:center;color:#14f195;margin:18px 0}
+.dis{text-align:center;color:#75867e;line-height:1.8;font-size:13px;margin-top:35px}
+@media(max-width:700px){
+h1{font-size:38px}
+.hero{font-size:28px}
+.cards{grid-template-columns:1fr}
+.btn{font-size:22px}
 }
 </style>
 </head>
 <body>
+<div class="bg"></div>
 <div class="wrap">
-<div class="card">
 
-<div class="live">🔴 LIVE • <span id="online">5647</span> traders online now</div>
+<div class="live"><span class="dot"></span> LIVE • <span id="online">5647</span> traders online now</div>
 
-<img class="logo" src="https://telegram-ads.riyazshaikh.com/wp-content/uploads/2025/06/images-5.jpeg">
-
-<img class="hero" src="https://telegram-ads.riyazshaikh.com/wp-content/uploads/2025/08/pankaj-image-2.jpg">
-
-<h1>Pankaj Bhardwaj Official</h1>
-
-<div class="rating">⭐ 4.9 / 5 Rating</div>
-
-<div class="grid">
-<div class="stat"><b>42K+</b>Subscribers</div>
-<div class="stat"><b>5+</b>Yrs Experience</div>
-<div class="stat"><b>100%</b>Free Access</div>
+<div class="logo-wrap">
+<img src="https://telegram-ads.riyazshaikh.com/wp-content/uploads/2025/08/pankaj-image-2.jpg">
 </div>
 
-<a class="btn" href="https://t.me/+BSyFOVRp6T85MGY9">🚀 JOIN FREE NOW</a>
+<h1>Pankaj Bhardwaj</h1>
+<div class="sub">🏆 India's No.1 Stock Market Channel</div>
+<div class="stars">★★★★★ (4.9/5 rating)</div>
 
-<p class="desc">
-Join our Telegram channel and get daily market updates, NIFTY & BANKNIFTY levels,
-analysis, educational content and trading insights.
-</p>
-
-<div class="join">🔥 7,589 people joined today!</div>
-
-<div class="features">
-<p>✅ Daily Nifty & BankNifty Levels</p>
-<p>✅ Educational Market Analysis</p>
-<p>✅ 5+ Years Market Experience</p>
-<p>✅ Trusted by 42,000+ Subscribers</p>
-<p>✅ Premium Updates Shared Free</p>
+<div class="cards">
+<div class="card"><b>42K+</b><br>Subscribers</div>
+<div class="card"><b>5+ Yrs</b><br>Experience</div>
+<div class="card"><b>100%</b><br>Free Access</div>
 </div>
 
-<a class="btn" href="https://t.me/+BSyFOVRp6T85MGY9">💬 JOIN TELEGRAM CHANNEL</a>
+<div class="hero">
+Join Free Now Pankaj Bhardwaj Channel and get daily premium calls for
+<span class="green">NIFTY, BANKNIFTY & SENSEX</span>
+with <span class="green">95% accuracy</span> & Account Handling Work
+</div>
 
-<div class="disclaimer">
+<div class="desc">
+Join thousands of traders receiving free market updates, analysis & account handling support.
+</div>
+
+<div class="joined">🔥 7,589 people joined today! • Limited time: <span class="green">100% FREE access</span></div>
+
+<a class="btn" href="https://t.me/+BSyFOVRp6T85MGY9">✈ Join Free Telegram Channel</a>
+
+<div class="feature">Daily Nifty & BankNifty Levels</div>
+<div class="feature">No Paid Tips — Purely Educational</div>
+<div class="feature">5+ Years of Market Experience</div>
+<div class="feature">42,000+ Subscribers Trust Us Already</div>
+<div class="feature">Account Handling Work with 95% Accuracy</div>
+
+<div class="joined">✨ 7,589 people joined today!</div>
+
+<a class="btn" href="https://t.me/+BSyFOVRp6T85MGY9">✈ Join Free Telegram Channel</a>
+
+<div class="limit">Limited time: 100% FREE access</div>
+
+<div class="dis">
 Disclaimer: This channel is for educational and informational purposes only.
-Trading and investing involve risk. Please do your own research before making financial decisions.
+Trading and investing involve risk. Please consult your financial advisor before making investment decisions.
 </div>
 
 </div>
-</div>
-
 <script>
 setInterval(()=>{
-const el=document.getElementById('online');
-let n=parseInt(el.innerText);
+let e=document.getElementById('online');
+let n=parseInt(e.innerText);
 n+=Math.floor(Math.random()*5)-2;
-if(n<5600)n=5650;
-el.innerText=n;
+e.innerText=n;
 },3000);
 </script>
 </body>
