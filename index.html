@@ -80,8 +80,8 @@ margin:0 auto 24px;
 width:10px;
 height:10px;
 border-radius:50%;
-background:#14f195;
-box-shadow:0 0 15px #14f195;
+background:#FF3131;
+box-shadow:0 0 15px #DE3163;
 }
 
 .logo-wrap{
@@ -259,6 +259,63 @@ height:140px;
 }
 
 }
+
+
+
+@keyframes pulseGlow{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.03);}
+}
+
+@keyframes floatUp{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-4px);}
+}
+
+.logo-wrap{
+animation:floatUp 3s ease-in-out infinite;
+}
+
+.btn{
+animation:pulseGlow 2s infinite;
+transition:.3s;
+}
+
+.card{
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.feature{
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateX(4px);
+}
+
+.timer-box{
+margin:18px 0;
+padding:16px;
+text-align:center;
+border-radius:18px;
+background:rgba(8,30,22,.75);
+border:1px solid rgba(20,241,149,.25);
+box-shadow:0 0 30px rgba(20,241,149,.12);
+font-weight:700;
+}
+
+#offerTimer{
+color:#14f195;
+font-size:26px;
+font-weight:800;
+text-shadow:0 0 15px rgba(20,241,149,.8);
+}
+
+  
 </style>
 </head>
 
@@ -270,9 +327,14 @@ height:140px;
 
 <div class="live">
 <span class="dot"></span>
-LIVE • <span id="online">5647</span> traders online now
+LIVE • <span id="online">5647</span> Traders online now 📈
 </div>
 
+<div class="timer-box">
+⏰ OFFER EXPIRES IN<br>
+<span id="offerTimer">20:00</span>
+</div>
+  
 <div class="logo-wrap">
 <img src="https://telegram-ads.riyazshaikh.com/wp-content/uploads/2025/08/pankaj-image-2.jpg" alt="Pankaj Bhardwaj">
 </div>
@@ -323,11 +385,11 @@ Join thousands of traders receiving free market updates, analysis & account hand
 ✈ Join Free Telegram Channel
 </a>
 
-<div class="feature">Daily Nifty & BankNifty Levels</div>
-<div class="feature">No Paid Tips — Purely Educational</div>
-<div class="feature">5+ Years of Market Experience</div>
-<div class="feature">42,000+ Subscribers Trust Us Already</div>
-<div class="feature">Account Handling Work with 95% Accuracy</div>
+<div class="feature">📈 Daily Nifty & BankNifty Levels</div>
+<div class="feature">🎓 No Paid Tips — Purely Educational</div>
+<div class="feature">🏆 5+ Years of Market Experience</div>
+<div class="feature">👥 42,000+ Subscribers Trust Us Already</div>
+<div class="feature">💼 Account Handling Work with 95% Accuracy</div>
 
 <div class="joined">
 ✨ 7,589 people joined today!
@@ -361,6 +423,24 @@ n + (Math.floor(Math.random() * 5) - 2)
 
 e.innerText = n;
 }, 3000);
+
+  let offerTime = 20 * 60;
+
+setInterval(() => {
+
+let minutes = Math.floor(offerTime / 60);
+let seconds = offerTime % 60;
+
+document.getElementById("offerTimer").innerText =
+String(minutes).padStart(2,'0') +
+":" +
+String(seconds).padStart(2,'0');
+
+if(offerTime > 0){
+offerTime--;
+}
+
+},1000);
 </script>
 
 </body>
