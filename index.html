@@ -59,68 +59,111 @@ background:#020b08;
 color:#fff;
 overflow-x:hidden;
 }
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden;width:100%}
+body{
+font-family:Inter,sans-serif;
+background:#030b08;
+color:#fff;
+}
 .bg{
 position:fixed;inset:0;
 background:
-radial-gradient(circle at center, rgba(0,255,170,.15), transparent 40%),
-radial-gradient(circle at 20% 20%, rgba(0,255,170,.08), transparent 25%),
-#020b08;
+radial-gradient(circle at center,rgba(20,241,149,.15),transparent 35%),
+radial-gradient(circle at top,rgba(20,241,149,.08),transparent 30%),
+#030b08;
+z-index:-1;
 }
-.wrap{position:relative;z-index:2;max-width:720px;margin:auto;padding:40px 20px}
-.live,.joined{
-display:flex;gap:10px;justify-content:center;align-items:center;
-padding:12px 18px;border-radius:999px;
-background:rgba(8,30,22,.7);
+.container{max-width:760px;margin:auto;padding:24px 16px}
+.badge,.timer{
+display:flex;justify-content:center;align-items:center;gap:10px;
+padding:12px 18px;
+margin:0 auto 18px;
+width:max-content;
+max-width:100%;
+border-radius:999px;
+background:rgba(10,25,20,.75);
 border:1px solid rgba(20,241,149,.25);
-box-shadow:0 0 30px rgba(20,241,149,.12);
-width:max-content;margin:0 auto 24px;
+box-shadow:0 0 25px rgba(20,241,149,.15);
 }
-.dot{width:10px;height:10px;border-radius:50%;background:#14f195;box-shadow:0 0 15px #14f195}
-.logo-wrap{
-width:170px;height:170px;margin:0 auto 20px;
-border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-box-shadow:0 0 0 4px rgba(20,241,149,.3),0 0 40px rgba(20,241,149,.5);
+.dot{width:10px;height:10px;border-radius:50%;background:#14f195}
+.profile{
+width:170px;height:170px;border-radius:50%;
+margin:18px auto;
+display:block;
+object-fit:cover;
+border:4px solid rgba(20,241,149,.5);
+box-shadow:0 0 40px rgba(20,241,149,.45);
 }
-.logo-wrap img{width:150px;height:150px;border-radius:50%;object-fit:cover}
-h1{text-align:center;font-size:54px}
-.sub{text-align:center;color:#ffcf4d;margin:12px 0}
-.stars{text-align:center;color:#ffcf4d}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}
+h1{text-align:center;font-size:48px;font-weight:800}
+.subtitle{text-align:center;color:#14f195;font-weight:700;margin-top:10px}
+.rating{text-align:center;color:#ffd54f;margin-top:8px}
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin:24px 0;
+}
 .card{
-background:rgba(8,30,22,.65);
+background:rgba(10,25,20,.75);
 border:1px solid rgba(20,241,149,.18);
-border-radius:20px;padding:20px;text-align:center;
-box-shadow:0 0 25px rgba(20,241,149,.08);
+padding:18px;
+border-radius:20px;
+text-align:center;
 }
-.card b{font-size:32px;color:#14f195}
+.card strong{display:block;color:#14f195;font-size:28px}
 .hero{
-font-size:42px;font-weight:800;text-align:center;line-height:1.25;
-margin:25px 0;
+font-size:34px;
+font-weight:800;
+line-height:1.35;
+text-align:center;
+margin:28px 0;
 }
-.green{color:#14f195;text-shadow:0 0 15px rgba(20,241,149,.8)}
-.desc{text-align:center;color:#9ab3a8;font-size:18px}
-.btn{
-display:block;text-align:center;text-decoration:none;color:#001d12;
-font-weight:800;font-size:30px;
+.highlight{
+color:#14f195;
+text-shadow:0 0 15px rgba(20,241,149,.8);
+}
+.desc{text-align:center;color:#a8b5af;line-height:1.8}
+.cta{
+display:block;
+text-align:center;
+margin:24px 0;
+padding:20px;
+border-radius:22px;
+text-decoration:none;
+font-weight:800;
+font-size:24px;
 background:#14f195;
-padding:24px;border-radius:22px;
-margin:25px 0;
-box-shadow:0 0 50px rgba(20,241,149,.55);
+color:#001c11;
+box-shadow:0 0 35px rgba(20,241,149,.5);
+}
+.features{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:20px;
 }
 .feature{
-background:rgba(8,30,22,.65);
+background:rgba(10,25,20,.75);
 border:1px solid rgba(20,241,149,.15);
-border-radius:20px;padding:22px;margin:14px 0;
+padding:16px;
+border-radius:16px;
+font-size:15px;
 }
-.feature:before{content:"✔ ";color:#14f195}
-.limit{text-align:center;color:#14f195;margin:18px 0}
-.dis{text-align:center;color:#75867e;line-height:1.8;font-size:13px;margin-top:35px}
-@media(max-width:700px){
-h1{font-size:38px}
-.hero{font-size:28px}
+.joined{text-align:center;color:#14f195;font-weight:700;margin:18px 0}
+.disclaimer{
+margin-top:30px;
+text-align:center;
+font-size:13px;
+color:#76867f;
+line-height:1.8;
+}
+@media(max-width:640px){
+h1{font-size:34px}
+.hero{font-size:26px}
 .cards{grid-template-columns:1fr}
-.btn{font-size:22px}
+.features{grid-template-columns:1fr}
+.cta{font-size:20px}
 }
 </style>
 </head>
@@ -130,10 +173,7 @@ h1{font-size:38px}
 
 <div class="live"><span class="dot"></span> LIVE • <span id="online">5647</span> traders online now</div>
 
-<div class="timer-box">
- ⏰ Free Access Ends In:
- <span id="timer">04:59</span>
-</div>
+<div class='timer'>⏰ Free Access Ends In: <span id='timer'>05:00</span></div>
   
 <div class="logo-wrap">
 <img src="https://telegram-ads.riyazshaikh.com/wp-content/uploads/2025/08/pankaj-image-2.jpg">
